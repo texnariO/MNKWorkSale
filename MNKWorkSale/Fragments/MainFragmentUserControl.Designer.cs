@@ -1,4 +1,4 @@
-﻿namespace MNKWorkSale
+﻿namespace MNKWorkSale.Fragments
 {
     partial class MainFragmentUserControl
     {
@@ -28,32 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonFirstClient = new System.Windows.Forms.Button();
+            this.buttonSecondClient = new System.Windows.Forms.Button();
+            this.panelMainFragment = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonFirstClient
             // 
-            this.button1.Location = new System.Drawing.Point(148, 186);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 96);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonFirstClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFirstClient.Location = new System.Drawing.Point(33, 37);
+            this.buttonFirstClient.Name = "buttonFirstClient";
+            this.buttonFirstClient.Size = new System.Drawing.Size(187, 121);
+            this.buttonFirstClient.TabIndex = 0;
+            this.buttonFirstClient.Text = "EMEX";
+            this.buttonFirstClient.UseVisualStyleBackColor = true;
+            this.buttonFirstClient.Click += new System.EventHandler(this.buttonFirstClient_Click);
             // 
-            // UserControl1
+            // buttonSecondClient
+            // 
+            this.buttonSecondClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSecondClient.Location = new System.Drawing.Point(454, 37);
+            this.buttonSecondClient.Name = "buttonSecondClient";
+            this.buttonSecondClient.Size = new System.Drawing.Size(187, 121);
+            this.buttonSecondClient.TabIndex = 1;
+            this.buttonSecondClient.Text = "Favorite";
+            this.buttonSecondClient.UseVisualStyleBackColor = true;
+            this.buttonSecondClient.Click += new System.EventHandler(this.buttonSecondClient_Click);
+            // 
+            // panelMainFragment
+            // 
+            this.panelMainFragment.Location = new System.Drawing.Point(0, 164);
+            this.panelMainFragment.Name = "panelMainFragment";
+            this.panelMainFragment.Size = new System.Drawing.Size(673, 377);
+            this.panelMainFragment.TabIndex = 2;
+            // 
+            // MainFragmentUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(607, 543);
-            this.Load += new System.EventHandler(this.UserControl1_Load);
+            this.Controls.Add(this.panelMainFragment);
+            this.Controls.Add(this.buttonSecondClient);
+            this.Controls.Add(this.buttonFirstClient);
+            this.Name = "MainFragmentUserControl";
+            this.Size = new System.Drawing.Size(673, 541);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonFirstClient;
+        private System.Windows.Forms.Button buttonSecondClient;
+        private System.Windows.Forms.Panel panelMainFragment;
     }
 }

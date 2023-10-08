@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MNKWorkSale.Fragments;
+using MNKWorkSale.Fragments.EMEX;
+using MNKWorkSale.Fragments.FAVORITE;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +15,31 @@ namespace MNKWorkSale
 {
     public partial class Form1 : Form
     {
+        public MainFragmentUserControl mainFragment = new MainFragmentUserControl();
+
         public Form1()
         {
             InitializeComponent();
-            MainFragmentUserControl mainFragment = new MainFragmentUserControl();
-            ShowUserControlFragment(mainFragment);
+            InitializationEventAttribute();
+                ShowUserControlFragment(this, mainFragment);
+        }
+        private void InitializationEventAttribute()
+        {
+            mainFragment.ButtonClickEvent += new MainFragmentUserControl.ButtonClickEventHandler(MainFragment_ButtonClickEvent);
+
         }
 
-        private void ShowUserControlFragment(UserControl userControl)
+        private void MainFragment_ButtonClickEvent(object sender, UserControl userControl)
         {
+            InitializationEventAttribute();
+            ShowUserControlFragment(this,userControl);
+        }
+
+
+        private void ShowUserControlFragment(object sender,UserControl userControl)
+        {
+            
+            //InitializationEventAttribute();
             PanelMain.Controls.Clear();
             PanelMain.Controls.Add(userControl);
             userControl.Dock = DockStyle.Fill;
