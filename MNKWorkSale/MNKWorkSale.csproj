@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fragments\EMEX\CreateFileOptima\CoreCreateFileOptimaClientEmex.cs" />
+    <Compile Include="Fragments\FAVORITE\CreateFileOptima\CoreFileOptimaClientFavorite.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
