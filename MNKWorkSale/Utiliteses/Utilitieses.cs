@@ -10,6 +10,7 @@ namespace MNKWorkSale
 {
     internal class Utilitieses
     {
+        #region Work with TextBoxes
         public bool checkTextBoxes(TextBox[] textBoxes)
         {
             foreach (TextBox box in textBoxes)
@@ -19,7 +20,26 @@ namespace MNKWorkSale
 
             return true;
         }
-        
+        public void textBox_TextChanged(Object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.BackColor = Color.BurlyWood;
+            }
+            else textBox.BackColor = SystemColors.Window;
+        }
+
+        #endregion
+        #region Work with CheckBox
+        public void checkBox_Clicked(object sender, EventArgs e)
+        {
+            CheckBox checkBox = (CheckBox)sender;
+            Console.WriteLine(checkBox.Checked);
+            checkBox.Checked = !checkBox.Checked;
+            Console.WriteLine(checkBox.Checked);
+        }
+        #endregion
         public string openFileToRead()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -31,7 +51,7 @@ namespace MNKWorkSale
             }
             return "";
         }
-
+        #region Work with Labels
         public void setLabelStartWorking(object sender)
         {
             Label label = (Label)sender;
@@ -57,5 +77,6 @@ namespace MNKWorkSale
             labelError.Text = ErrorMess;
             labelError.BackColor = Color.IndianRed;
         }
+        #endregion
     }
 }

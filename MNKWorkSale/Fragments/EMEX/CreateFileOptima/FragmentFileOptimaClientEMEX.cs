@@ -20,18 +20,9 @@ namespace MNKWorkSale.Fragments.EMEX
         {
             InitializeComponent();
 
-            textBoxWritePrice.TextChanged += textBox_TextChanged;
-            textBoxWriteCounts.TextChanged += textBox_TextChanged;  
-            textBoxWritePositions.TextChanged += textBox_TextChanged;   
-        }
-
-        public void textBox_TextChanged(Object sender, EventArgs e)
-        {
-            TextBox textBox = (TextBox)sender;
-            if(string.IsNullOrEmpty(textBox.Text))
-            {
-                textBox.BackColor = Color.BurlyWood;
-            }else textBox.BackColor = SystemColors.Window;
+            textBoxWritePrice.TextChanged += utilitieses.textBox_TextChanged;
+            textBoxWriteCounts.TextChanged += utilitieses.textBox_TextChanged;  
+            textBoxWritePositions.TextChanged += utilitieses.textBox_TextChanged;   
         }
 
         private void btnChooseFileForWork_Click(object sender, EventArgs e)
